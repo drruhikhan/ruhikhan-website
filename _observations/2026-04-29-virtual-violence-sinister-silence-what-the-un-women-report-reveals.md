@@ -2,7 +2,7 @@
 title: "Virtual Violence, Sinister Silence: What the UN Women Report Reveals"
 date: 30 April 2026
 topic: AI Ethics & Governance
-image: ""
+image: /images/uploads/un-report.jpeg
 ---
 A landmark new report from UN Women, Tipping Point: Online Violence — Impacts, Manifestations and Redress in the AI Age, confirms what feminist researchers and journalists have been documenting for years: AI is not a neutral technology, and women in public life are paying the price for treating it as though it were. Based on a global survey of 641 women journalists, activists and human rights defenders across 119 countries, the findings are stark—forty-one per cent self-censor on social media to avoid abuse. Police reports have doubled since 2020, yet only 15% result in any legal action. A quarter of those who did report were made to feel responsible for the violence against them.
 
