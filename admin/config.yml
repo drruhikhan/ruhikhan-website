@@ -1,0 +1,30 @@
+yamlbackend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "observations"
+    label: "Observations"
+    folder: "_observations"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "D MMMM YYYY", date_format: "D MMMM YYYY", time_format: false }
+      - label: "Topic"
+        name: "topic"
+        widget: "select"
+        options:
+          - "AI Ethics & Governance"
+          - "Media & Journalism"
+          - "Feminist Politics"
+          - "Global South"
+          - "Tech & Society"
+          - "UK–India Relations"
+          - "Academic Commentary"
+          - "Other"
+      - { label: "Image (optional)", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
