@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loading... — Dr. Ruhi Khan</title>
   <script>
-    // If this is an observations URL, redirect to the post viewer
     var path = window.location.pathname;
     if (path.indexOf('/observations/') === 0) {
-      // Pass the slug to observations/index.html via sessionStorage then redirect
-      sessionStorage.setItem('postSlug', path.replace('/observations/', '').replace(/\/$/, ''));
-      window.location.replace('/observations/');
+      var slug = path.replace('/observations/', '').replace(/\/$/, '');
+      window.location.replace('/observations/?p=' + slug);
     } else {
       window.location.replace('/');
     }
