@@ -127,12 +127,8 @@ function copyLink() {
   });
 }
 async function loadPost() {
-  const pathParts = window.location.pathname.split('/').filter(Boolean);
-  let slug = pathParts[pathParts.length - 1];
-  if (slug === 'observations' || slug === 'index.html') {
-    slug = sessionStorage.getItem('postSlug') || '';
-    sessionStorage.removeItem('postSlug');
-  }
+  const params = new URLSearchParams(window.location.search);
+let slug = params.get('p') || '';
   if (!slug) {
     document.getElementById('loading').textContent = 'No post specified.';
     return;
