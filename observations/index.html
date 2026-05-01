@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="page-title">Loading... — Dr. Ruhi Khan</title>
+
+  <!-- Open Graph tags (populated by JS after fetch) -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Dr. Ruhi Khan"/>
+  <meta id="og-title" property="og:title" content="Dr. Ruhi Khan — Observations & Analysis"/>
+  <meta id="og-description" property="og:description" content="Expert commentary on AI ethics, feminist media studies, tech governance and the Global South."/>
+  <meta id="og-image" property="og:image" content="https://ruhikhan.com/images/ruhi-og.jpg"/>
+  <meta id="og-url" property="og:url" content="https://ruhikhan.com/observations/"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta id="tw-title" name="twitter:title" content="Dr. Ruhi Khan — Observations & Analysis"/>
+  <meta id="tw-description" name="twitter:description" content="Expert commentary on AI ethics, feminist media studies, tech governance and the Global South."/>
+  <meta id="tw-image" name="twitter:image" content="https://ruhikhan.com/images/ruhi-og.jpg"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --navy: #1e3a5f; --navy-mid: #284d7a; --gold: #c9952a;
+      --text: #1a1a2e; --muted: #6b7280; --bg: #ffffff; --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); }
+    nav { background: var(--navy); padding: 0 2rem; height: 62px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .nav-brand { color: #fff; font-family: 'Playfair Display', serif; font-size: 1.1rem; text-decoration: none; }
+    .nav-back { color: var(--gold); font-size: 0.9rem; text-decoration: none; }
+    .nav-back:hover { color: #e0a830; }
+    .post-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 3.5rem 2rem 3rem; color: #fff; }
+    .post-hero-inner { max-width: 780px; margin: 0 auto; }
+    .post-topic { display: inline-block; background: var(--gold); color: #fff; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 2px; margin-bottom: 1.2rem; }
+    .post-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.2; margin-bottom: 1.2rem; color: #fff; }
+    .post-meta { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+    .post-author { font-weight: 600; color: rgba(255,255,255,0.9); }
+    .post-body-wrap { max-width: 780px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+    .post-image { width: 100%; max-height: 420px; object-fit: cover; border-radius: 4px; margin-bottom: 2.5rem; box-shadow: 0 4px 24px rgba(30,58,95,0.15); }
+    .post-body p { font-size: 1.08rem; line-height: 1.85; color: #2d3748; margin-bottom: 1.4rem; }
+    .post-body h2, .post-body h3 { font-family: 'Playfair Display', serif; color: var(--navy); margin: 2rem 0 0.8rem; }
+    .share-section { border-top: 2px solid var(--border); margin-top: 3rem; padding-top: 2rem; }
+    .share-label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .share-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+    .share-btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 1.1rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: opacity 0.2s; }
+    .share-btn:hover { opacity: 0.85; }
+    .share-btn.linkedin { background: #0077b5; color: #fff; }
+    .share-btn.twitter { background: #000; color: #fff; }
+    .share-btn.bluesky { background: #0085ff; color: #fff; }
+    .share-btn.copy { background: var(--navy); color: #fff; }
+    .back-section { max-width: 780px; margin: 0 auto; padding: 0 2rem 3rem; }
+    .back-link { color: var(--navy); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.4rem; border: 2px solid var(--navy); padding: 0.5rem 1rem; border-radius: 4px; transition: background 0.2s, color 0.2s; }
+    .back-link:hover { background: var(--navy); color: #fff; }
+    .loading { max-width: 780px; margin: 4rem auto; padding: 0 2rem; color: var(--muted); font-size: 1rem; }
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 1.5rem 2rem; font-size: 0.82rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="/">Dr. Ruhi Khan</a>
+  <a class="nav-back" href="/#opinions">← Back to Observations</a>
+</nav>
+
+<div id="loading" class="loading">Loading post…</div>
+<div id="post-content" style="display:none">
+  <div class="post-hero">
+    <div class="post-hero-inner">
+      <div id="post-topic" class="post-topic"></div>
+      <h1 id="post-title-el" class="post-title"></h1>
+      <div class="post-meta">
+        <span class="post-author">Dr. Ruhi Khan</span>
+        <span id="post-date"> · </span>
+      </div>
+    </div>
+  </div>
+  <div class="post-body-wrap">
+    <img id="post-img" class="post-image" src="" alt="" style="display:none"/>
+    <div id="post-body" class="post-body"></div>
+    <div class="share-section">
+      <div class="share-label">Share this post</div>
+      <div class="share-buttons">
+        <a id="share-linkedin" class="share-btn linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="share-twitter" class="share-btn twitter" href="#" target="_blank" rel="noopener">X / Twitter</a>
+        <a id="share-bluesky" class="share-btn bluesky" href="#" target="_blank" rel="noopener">Bluesky</a>
+        <button id="share-copy" class="share-btn copy" onclick="copyLink()">Copy link</button>
+      </div>
+    </div>
+  </div>
+  <div class="back-section">
+    <a class="back-link" href="/#opinions">← All Observations</a>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Dr. Ruhi Khan</a> &nbsp;·&nbsp; LSE · AI Ethics · Critical Media · Feminist Studies · Global South
+</footer>
+
+<script>
+function parseFrontmatter(text) {
+  const match = text.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+  if (!match) return null;
+  const frontmatter = match[1];
+  const body = match[2].trim();
+  const post = { body };
+  frontmatter.split('\n').forEach(line => {
+    const colonIdx = line.indexOf(':');
+    if (colonIdx === -1) return;
+    const key = line.slice(0, colonIdx).trim();
+    const val = line.slice(colonIdx + 1).trim().replace(/^["']|["']$/g, '');
+    post[key] = val;
+  });
+  return post;
+}
+function titleToSlug(title) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+function copyLink() {
+  const btn = document.getElementById('share-copy');
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.textContent = 'Copy link'; }, 2000);
+  });
+}
+async function loadPost() {
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const slug = pathParts[pathParts.length - 1];
+  if (!slug || slug === 'observations') {
+    document.getElementById('loading').textContent = 'No post specified.';
+    return;
+  }
+  try {
+    const listRes = await fetch('https://api.github.com/repos/drruhikhan/ruhikhan-website/contents/_observations');
+    if (!listRes.ok) throw new Error('Could not load posts');
+    const files = await listRes.json();
+    let matchedPost = null;
+    for (const file of files) {
+      if (!file.name.endsWith('.md')) continue;
+      const fileRes = await fetch(file.download_url);
+      const text = await fileRes.text();
+      const post = parseFrontmatter(text);
+      if (!post || !post.title) continue;
+      if (titleToSlug(post.title) === slug) { matchedPost = post; break; }
+    }
+    if (!matchedPost) { document.getElementById('loading').textContent = 'Post not found.'; return; }
+    const post = matchedPost;
+    const postURL = window.location.href;
+    const excerpt = post.body.replace(/\n/g, ' ').slice(0, 200) + '…';
+    document.title = post.title + ' — Dr. Ruhi Khan';
+    document.getElementById('og-title').setAttribute('content', post.title + ' — Dr. Ruhi Khan');
+    document.getElementById('og-description').setAttribute('content', excerpt);
+    document.getElementById('og-url').setAttribute('content', postURL);
+    document.getElementById('tw-title').setAttribute('content', post.title + ' — Dr. Ruhi Khan');
+    document.getElementById('tw-description').setAttribute('content', excerpt);
+    if (post.image) {
+      document.getElementById('og-image').setAttribute('content', post.image);
+      document.getElementById('tw-image').setAttribute('content', post.image);
+    }
+    document.getElementById('post-topic').textContent = post.topic || 'Commentary';
+    document.getElementById('post-title-el').textContent = post.title;
+    document.getElementById('post-date').textContent = ' · ' + (post.date || '');
+    if (post.image) {
+      const img = document.getElementById('post-img');
+      img.src = post.image; img.alt = post.title; img.style.display = 'block';
+    }
+    const bodyEl = document.getElementById('post-body');
+    post.body.split('\n\n').filter(p => p.trim()).forEach(para => {
+      const p = document.createElement('p');
+      p.textContent = para.trim();
+      bodyEl.appendChild(p);
+    });
+    const encodedURL = encodeURIComponent(postURL);
+    const encodedTitle = encodeURIComponent(post.title + ' — Dr. Ruhi Khan');
+    document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodedURL;
+    document.getElementById('share-twitter').href = 'https://twitter.com/intent/tweet?url=' + encodedURL + '&text=' + encodedTitle;
+    document.getElementById('share-bluesky').href = 'https://bsky.app/intent/compose?text=' + encodedTitle + ' ' + encodedURL;
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('post-content').style.display = 'block';
+  } catch(e) {
+    document.getElementById('loading').textContent = 'Could not load post. Please try again.';
+    console.error(e);
+  }
+}
+loadPost();
+</script>
+</body>
+</html>
